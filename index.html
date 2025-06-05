@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Hi, I'm <span id="student-name">Your Name</span></h1>
+        <p>I'm learning to build websites!</p>
+        <img
+          src="default-profile.jpg"
+          alt="Profile Picture"
+          id="profile-pic"
+          class="profile-pic"
+        />
+      </header>
+
+      <section class="about-section">
+        <h2>About Me</h2>
+        <p id="student-bio">Your bio will appear here</p>
+      </section>
+
+      <section class="contact-section">
+        <h2>Contact Me</h2>
+        <form id="contact-form" onsubmit="sendMessage(event)">
+          <div class="form-group">
+            <label for="contact-name">Your Name:</label>
+            <input
+              type="text"
+              id="contact-name"
+              placeholder="Your name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" placeholder="Your email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea
+              id="message"
+              placeholder="Your message..."
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit">Send Message</button>
+        </form>
+        <p id="response" class="response"></p>
+      </section>
+
+      <section class="form-section">
+        <h2>Update Your Profile</h2>
+        <form id="profile-form">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="bio">Bio:</label>
+            <textarea id="bio" name="bio" rows="4"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="profile-picture">Profile Picture URL:</label>
+            <input
+              type="file"
+              id="profile-picture"
+              name="profile-picture"
+              placeholder="https://example.com/image.jpg"
+            />
+          </div>
+
+          <button type="submit">Update Profile</button>
+        </form>
+      </section>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
