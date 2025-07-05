@@ -3,6 +3,22 @@ const profileForm = document.getElementById("profile-form");
 const studentName = document.getElementById("student-name");
 const studentBio = document.getElementById("student-bio");
 const profilePic = document.getElementById("profile-pic");
+const updateButton = document.getElementById("update-button");
+const formSection = document.getElementById("form-section");
+
+// Hide the form section initially
+formSection.style.display = "none";
+
+// Add event listener to the update button to show/hide the form
+updateButton.addEventListener("click", function () {
+  if (formSection.style.display === "none") {
+    formSection.style.display = "block";
+    updateButton.textContent = "Cancel update";
+  } else {
+    formSection.style.display = "none";
+    updateButton.textContent = "Update profile details";
+  }
+});
 
 // Add event listener to the profile form
 profileForm.addEventListener("submit", function (e) {
@@ -42,19 +58,8 @@ profileForm.addEventListener("submit", function (e) {
 
   // Reset form
   profileForm.reset();
+
+  // Hide the form and reset button text
+  formSection.style.display = "none";
+  updateButton.textContent = "Update profile details";
 });
-
-// Contact form functionality
-function sendMessage(event) {
-  event.preventDefault(); // prevent page refresh
-
-  const name = document.getElementById("contact-name").value;
-  const response = document.getElementById("response");
-
-  response.innerText = `Thanks for your message, ${name}! I'll get back to you soon.`;
-
-  // Clear form
-  document.getElementById("contact-name").value = "";
-  document.getElementById("email").value = "";
-  document.getElementById("message").value = "";
-}
